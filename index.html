@@ -2,27 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Physics Study</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Physics Learning Portal</title>
 </head>
 <body>
-    <h1>Welcome to the Physics Study</h1>
-    <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" placeholder="Enter your username" required>
-        <button id="loginButton">Login</button>
-    </div>
-    <script>
-        document.getElementById('loginButton').addEventListener('click', function() {
-            const username = document.getElementById('username').value;
-            if (username) {
-                // Redirect to study sections (replace 'study.html' with actual study section link)
-                window.location.href = 'study.html?user=' + encodeURIComponent(username);
-            } else {
-                alert('Please enter a username to proceed.');
-            }
-        });
-    </script>
+    <header>
+        <h1>Welcome to the Physics Learning Portal</h1>
+    </header>
+
+    <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    <section id="flashcards">
+        <h2>Flashcards</h2>
+        <div id="flashcardContainer"></div>
+        <button onclick="showFlashcard()">Show Flashcard</button>
+    </section>
+
+    <section id="quiz">
+        <h2>Quiz</h2>
+        <div id="quizContainer"></div>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </section>
+
+    <section id="concepts">
+        <h2>Concepts</h2>
+        <div id="conceptsList">
+            <ul>
+                <li>Concept 1</li>
+                <li>Concept 2</li>
+                <li>Concept 3</li>
+            </ul>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
